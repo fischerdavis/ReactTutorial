@@ -1,8 +1,27 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-function Greeting() {
-  return <h4>This is Fischer, and this is my first component!</h4>;
+function Booklist() {
+  return (
+    <section>
+      <Book />
+    </section>
+  );
 }
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+function Book () {
+  return (
+  <article>
+    <Image />
+    <Title />
+    <Author />
+  </article>
+  );
+}
+
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg" alt="" />
+
+const Title = () => <h1>I Love You to the Moon and Back</h1>
+
+const Author = () => <h4>Amelia Hepworth</h4>
+ReactDom.render(<Booklist />, document.getElementById("root"));
