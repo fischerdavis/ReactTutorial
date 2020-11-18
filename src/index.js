@@ -1,9 +1,17 @@
 import React from "react";
 import ReactDom from "react-dom";
 
+// CSS
+import './index.css';
+
 function Booklist() {
   return (
-    <section>
+    <section className="bookList">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       <Book />
     </section>
   );
