@@ -19,7 +19,7 @@ function Booklist() {
 
 function Book () {
   return (
-  <article>
+  <article className="book">
     <Image />
     <Title />
     <Author />
