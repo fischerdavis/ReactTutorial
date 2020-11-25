@@ -3,14 +3,18 @@ import ReactDom from "react-dom";
 
 // CSS
 import './index.css';
-const author = 'Amelia Hepworth';
-const title = 'I Love You to the Moon and Back';
-const img = 'https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg'
+
+firstBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg',
+  title: 'I Love You to the Moon and Back',
+  author: 'Amelia Hepworth'
+}
+
 
 function Booklist() {
   return (
     <section className="bookList">
-      <Book job='developer'/>
+      <Book firstBook/>
       <Book title='Title' number={23}/>
     </section>
   );
@@ -20,9 +24,10 @@ function Booklist() {
 function Book (props) {
   return (
   <article className="book">
-    <img src={img} alt="" />
-    <h1>{title}</h1>
-    <h4>{author}</h4>
+    <img src={props.img} alt="" />
+    <h1>{props.title}</h1>
+    <h4>{props.author}</h4>
+    <p>{props.job}</p>
   </article>
   );
 }
