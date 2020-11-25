@@ -3,21 +3,26 @@ import ReactDom from "react-dom";
 
 // CSS
 import './index.css';
+const author = 'Amelia Hepworth';
+const title = 'I Love You to the Moon and Back';
+const img = 'https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg'
 
 function Booklist() {
   return (
     <section className="bookList">
-      <Book />
+      <Book job='developer'/>
+      <Book title='Title' number={23}/>
     </section>
   );
 }
 
-function Book () {
+//props just stands for properties its a convention 
+function Book (props) {
   return (
   <article className="book">
-    <img src="https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg" alt="" />
-    <h1>I Love You to the Moon and Back</h1>
-    <h4>Amelia Hepworth</h4>
+    <img src={img} alt="" />
+    <h1>{title}</h1>
+    <h4>{author}</h4>
   </article>
   );
 }
