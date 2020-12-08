@@ -51,11 +51,18 @@ function Book (props) {
   // This is called object destructuring and this is javascipt thing not react.
   //const {img, title, author} = props.book;
   const {img, title, author} = props;
+
+  // This is a reference example.
+  const clickHandler = () => {
+    alert('Hello World');
+  };
+
   return (
   <article className="book">
     <img src={img} alt="" />
     <h1>{title}</h1>
     <h4>{author}</h4>
+    <button type="button" onClick={clickHandler}>Reference Example</button>
   </article>
   );
 }
