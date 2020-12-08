@@ -53,16 +53,24 @@ function Book (props) {
   const {img, title, author} = props;
 
   // This is a reference example.
-  const clickHandler = () => {
+  const clickHandler = (e) => {
+    console.log(e);
     alert('Hello World');
   };
 
+  const complexExample = (author) => {
+    console.log(author)
+  };
+
   return (
-  <article className="book">
+  <article className="book" onMouseOver={ () => {
+    
+  }}>
     <img src={img} alt="" />
     <h1>{title}</h1>
     <h4>{author}</h4>
     <button type="button" onClick={clickHandler}>Reference Example</button>
+    <button type="button" onClick={ () => complexExample(author) }>More Complex Example</button>
   </article>
   );
 }
