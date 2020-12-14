@@ -3,32 +3,8 @@ import ReactDom from "react-dom";
 
 // CSS
 import './index.css';
-
-const books = [
-  {
-    id: 1,
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg',
-    title: 'I Love You to the Moon and Back',
-    author: 'Amelia Hepworth'
-  },
-  {
-    id: 2,
-    img: 'https://images-na.ssl-images-amazon.com/images/I/71aLultW5EL._AC_UL200_SR200,200_.jpg',
-    title: 'Our Class is a Family',
-    author: 'Shannon Olsen'
-  },
-  {
-    id: 3,
-    img: 'https://images-na.ssl-images-amazon.com/images/I/71e5m7xQd0L._AC_UL200_SR200,200_.jpg',
-    title: 'The Vanishing Half: A Novel',
-    author: 'Brit Bennett'
-  },
-];
-
-// const names = ['John', 'Jim', 'Peter'];
-// const newNames = names.map((name) => {
-//   return <h1>name</h1>;
-// });
+import { books } from './books';
+import Book from './Book';
 
 function Booklist() {
   return (
@@ -41,37 +17,6 @@ function Booklist() {
       // This is the spread operator and it will spread the variables out and send them as props.
       return <Book key={book.id} {...book}></Book>
     })}</section>
-  );
-}
-
-//props just stands for properties its a convention, and is used for passing data between components.
-function Book (props) {
-// The keyword children is important for child props
-//function Book ({img, title, author, children}) {
-  // This is called object destructuring and this is javascipt thing not react.
-  //const {img, title, author} = props.book;
-  const {img, title, author} = props;
-
-  // This is a reference example.
-  const clickHandler = (e) => {
-    console.log(e);
-    alert('Hello World');
-  };
-
-  const complexExample = (author) => {
-    console.log(author)
-  };
-
-  return (
-  <article className="book" onMouseOver={ () => {
-    
-  }}>
-    <img src={img} alt="" />
-    <h1>{title}</h1>
-    <h4>{author}</h4>
-    <button type="button" onClick={clickHandler}>Reference Example</button>
-    <button type="button" onClick={ () => complexExample(author) }>More Complex Example</button>
-  </article>
   );
 }
 
